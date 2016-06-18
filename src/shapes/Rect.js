@@ -25,15 +25,19 @@ module.exports = Rect;
  * @private
  */
 Rect.prototype._drawShape = function() {
-    if (this.width <= 0 || this.height <= 0) {
-        return;
-    }
     if (this.radius) {
-        this.drawRoundedRect(0, 0,
-            this._width, this._height,
+        this.drawRoundedRect(
+            Math.min(this._width, 0), 
+            Math.min(this._height, 0), 
+            Math.abs(this._width),
+            Math.abs(this._height),
             this.radius);
     } else {
-        this.drawRect(0, 0, this._width, this._height);
+        this.drawRect(
+            Math.min(this._width, 0), 
+            Math.min(this._height, 0), 
+            Math.abs(this._width),
+            Math.abs(this._height));
     }
 };
 

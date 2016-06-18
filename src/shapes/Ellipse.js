@@ -23,8 +23,9 @@ module.exports = Ellipse;
  * @private
  */
 Ellipse.prototype._drawShape = function() {
-    if (this.width <= 0 || this.height <= 0) {
-        return;
-    }
-    this.drawEllipse(this.width/2, this.height/2, this.width/2, this.height/2);
+    
+
+    this.drawEllipse(this.width/2, this.height/2, 
+        Math.abs(this.width/2), 
+        Math.abs(this.height/2));
 };

@@ -113,11 +113,12 @@ Shape.prototype.drawBorder = function() {
  * @private
  */
 Shape.prototype._drawShape = function() {
-    if (this.width <= 0 || this.height <= 0) {
-        return;
-    }
     // default shape is a rect
-    this.drawRect(0, 0, this._width, this._height);
+    this.drawRect(
+        Math.min(this._width, 0), 
+        Math.min(this._height, 0), 
+        Math.abs(this._width),
+        Math.abs(this._height));
 };
 
 

@@ -26,15 +26,12 @@ module.exports = Line;
  * @private
  */
 Line.prototype._drawShape = function() {
-    if (this.width <= 0 || this.height <= 0) {
-        return;
-    }
     if (this.reverse) {
         this.moveTo(this._width, 0);
         this.lineTo(0, this._height);
     } else {
         this.moveTo(0, 0);
-        this.lineTo(this._width, this._height);
+        this.lineTo(this._width,this._height);
     }
 };
 

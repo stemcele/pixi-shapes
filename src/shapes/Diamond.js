@@ -23,9 +23,6 @@ module.exports = Diamond;
  * @private
  */
 Diamond.prototype._drawShape = function() {
-    if (this.width <= 0 || this.height <= 0) {
-        return;
-    }
     this.moveTo(this._width/2, 0)
         .lineTo(this._width, this._height/2)
         .lineTo(this._width/2, this._height)
