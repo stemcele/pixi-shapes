@@ -26,5 +26,5 @@ Ellipse.prototype._drawShape = function() {
     if (this.width <= 0 || this.height <= 0) {
         return;
     }
-    this.drawEllipse(0, 0, this.width, this.height);
+    this.drawEllipse(this.width/2, this.height/2, this.width/2, this.height/2);
 };

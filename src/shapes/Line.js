@@ -9,9 +9,10 @@ var Shape = require('./Shape');
  * @constructor
  */
 
-function Line(color, alpha, width, height, reverse) {
-    Shape.call(this, color, alpha, width, height);
+function Line(color, alpha, width, height, lineWidth, reverse) {
     this._reverse = reverse;
+    Shape.call(this, color, alpha, width, height);
+    this.lineWidth = lineWidth || 1;
 }
 
 Line.prototype = Object.create( Shape.prototype );
@@ -52,3 +53,23 @@ Object.defineProperty(Line.prototype, 'reverse', {
         this.invalid = true;
     }
 });
+
+
+/**
+ * update before draw call
+ * Line has to be drawn different than other Shapes
+ *
+ * @method redraw
+ */
+Line.prototype.redraw = function() {
+    if(!this.invalid) {
+        return;
+    }
+
+    var lineWidth = this.lineWidth;
+    this.clear();
+    this.lineStyle(lineWidth, this.color);
+    this._drawShape();
+
+    this.invalid = false;
+};

@@ -26,7 +26,7 @@ Diamond.prototype._drawShape = function() {
     if (this.width <= 0 || this.height <= 0) {
         return;
     }
-    this.graphics.moveTo(this._width/2, 0)
+    this.moveTo(this._width/2, 0)
         .lineTo(this._width, this._height/2)
         .lineTo(this._width/2, this._height)
         .lineTo(0, this._height/2)

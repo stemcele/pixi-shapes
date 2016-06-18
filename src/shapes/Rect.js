@@ -4,8 +4,8 @@ var Shape = require('./Shape');
  * basic rectangular shape
  *
  * @class Rect
- * @extends PIXI.shape.Shape
- * @memberof PIXI.shape
+ * @extends PIXI.shapes.Shape
+ * @memberof PIXI.shapes
  * @constructor
  */
 
