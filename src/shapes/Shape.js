@@ -107,6 +107,38 @@ Shape.prototype.drawBorder = function() {
 };
 
 /**
+ * change border color of shape 
+ *
+ * @property borderColor
+ * @type Number (color)
+ */
+Object.defineProperty(Shape.prototype, 'borderColor', {
+    get: function() {
+        return this._borderColor;
+    },
+    set: function(borderColor) {
+        this._borderColor = borderColor;
+        this.invalid = true;
+    }
+});
+
+/**
+ * change border size 
+ *
+ * @property border
+ * @type Number (size in pixel)
+ */
+Object.defineProperty(Shape.prototype, 'border', {
+    get: function() {
+        return this._border;
+    },
+    set: function(border) {
+        this._border = border;
+        this.invalid = true;
+    }
+});
+
+/**
  * draw the shape during redraw. defaults to a simple rect
  *
  * @method _drawShape
